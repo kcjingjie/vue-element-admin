@@ -16,6 +16,9 @@ import './permission' // permission control
 import './mock' // simulation data
 
 import * as filters from './filters' // global filters
+import echarts from 'echarts'
+
+Vue.prototype.$echarts = echarts
 
 Vue.use(Element, {
   size: 'medium' // set element-ui default size

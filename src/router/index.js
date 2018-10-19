@@ -159,5 +159,34 @@ export const asyncRouterMap = [
         noCache: true
       }
     ]
+  },
+  /*新添加的考试分析，饼图和折线图*/
+  {
+    path: '/exam/analysis/',
+    title: '成绩分析',
+    component: Layout,
+    children: [
+      {
+        path: '/exam/analysis/',
+        component: () => import('@/views/exam/analysis'),
+        name: '成绩分析',
+        meta: { title: '成绩分析', icon: 'list', status: { '已校对': true }},
+        noCache: true
+      }
+    ]
+  },
+  {
+    path: '/exam/scoreAnalysis/:examid(\\d+)',
+    title: '考试成绩分析',
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '/exam/scoreAnalysis/:examid(\\d+)',
+        component: () => import('@/views/exam/scoreAnalysis'),
+        name: '考试成绩分析',
+        noCache: true
+      }
+    ]
   }
 ]
